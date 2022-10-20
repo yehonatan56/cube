@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>cube to website</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+      <div class="all-site">
+         <span class="headline">
+            <h1>הקוביה המסתובבת</h1>
+            <div class="cube"  style="--size: 70px">
+                  <div class="top"></div>
+                  <div class="right"></div>
+                  <div class="left"></div>
+                  <div class="bottom"></div>
+                  <div class="front"></div>
+                  <div class="back"></div>
+            </div>
+         </span>
+            
+            <div class="explanation">
+                  <h2>קובית הקסם לפרסום באתרים</h2>
+                  <p>האתר נראה פשוט ולא מושך?</p>
+                  <p>מחפש משהו שיעשה את האתר שאתה בונה מעניין?</p>
+                  <p>מעוניין להגדיל את שטחיי הפרסום פי 6</p>
+                  <p>רוצה לתת חוויה מרגשת לגולשים באתרים שאתה בונה? </p>
+                  <p></p>
+                  <h2>קובית הקסם תיתן לאתר שלך נראות חדשנית מגניבה</h2>
+                  <p>המשתמש באתר ימוגנט לתנועה החיה באתר</p>
+                  <p>שטח הפרסום באתר יוגדל עד פי 6 </p>
+                  <p>והכי חשוב שזה לא עולה לך כלום!</p>
+                  <p></p>
+                  <h2>הסבר קצר על קוביית הקסם</h2>
+                  <p>קוביית הקסם הינה קובייה תלת ממדית אותה אתה יכול להטמיע בקלות בכל אתר שאתה בונה. </p>
+                  <p>באפשרותך לקבוע את מיקום הקובייה באתר, מיקום תנועתה, כיוון התנועה ומהירותה. כמו כן אתה שולט בגודל
+                        הקובייה,
+                        גבולות הפאות וכולי</p>
+
+                  <h1>הוראות ליצירת קובייה באתר וורדפרס</h1>
+                  <ol>
+                        <li>הורד את התוסף <a href="cube.zip">כאן</a></li>
+                        <li>יבא אותו לוורדפרס</li>
+                        <li>העלה 6 תמונות לספריית מדיה בוורדפרס</li>
+                        <li>מלא את הטופס</li>
+                        <li>לחץ צור שורטקוד</li>
+                        <li>העתק את השורטקוד</li>
+                        <li>צור ווג'ט שורטקוד באתרך איפה שאתה רוצה את הקוביה</li>
+                        <li>הדבק את השורטקוד</li>
+                  </ol>
+            </div>
+            <div class="cube cubeMain" style="--size: 200px">
+                  <div class="top"></div>
+                  <div class="right"></div>
+                  <div class="left"></div>
+                  <div class="bottom"></div>
+                  <div class="front"></div>
+                  <div class="back"></div>
+            </div>
+            <form>
+                  <div class="form-item">
+                        <div>הכנס כתובת תמונה בחלק העליון של הקוביה</div> <input type="text" class="urls" id="topUrl">
+                  </div>
+                  <div class="form-item">
+                        <div>הכנס כתובת תמונה בחלק התחתון של הקוביה</div> <input type="text" class="urls"
+                              id="bottomUrl">
+                  </div>
+                  <div class="form-item">
+                        <div>הכנס כתובת תמונה בחלק הימיני של הקוביה</div> <input type="text" class="urls" id="rightUrl">
+                  </div>
+
+
+                  <div class="form-item">
+                        <div>הכנס כתובת תמונה בחלק השמאלי של הקוביה</div> <input type="text" class="urls" id="leftUrl">
+                  </div>
+                  <div class="form-item">
+                        <div>הכנס כתובת תמונה בחלק האחורי של הקוביה</div> <input type="text" class="urls" id="backUrl">
+                  </div>
+                  <div class="form-item">
+                        <div>הכנס כתובת תמונה בחלק הקידמי של הקוביה</div> <input type="text" class="urls" id="frontUrl">
+                  </div>
+
+                  <div class="form-item">
+                        <div>קבע את רוחב הקוביה בפיקסלים</div>
+                        <div class="input-group">
+                              <input type="button" value="-" class="button-minus" data-field="width">
+                              <input type="number" step="1" max="" value="1" name="width" id="width"
+                                    class="width-field">
+                              <input type="button" value="+" class="button-plus" data-field="width">
+                        </div>
+
+                  </div>
+                  <div class="form-item">
+                        <div>קבע את עובי מסגרת הדפנות הקוביה בפיקסלים</div>
+                        <div class="input-group">
+                              <input type="button" value="-" class="button-minus" data-field="borderSize">
+                              <input type="number" step="1" max="" value="1" name="borderSize" id="borderSize"
+                                    class="borderSize-field">
+                              <input type="button" value="+" class="button-plus" data-field="borderSize">
+                        </div>
+
+                  </div>
+                  <div class="form-item">
+                        <div>קבע את צבע מסגרת הדפנות הקוביה</div> <input type="color" id="borderColor">
+                  </div>
+                  <div class="form-item">
+                        <div>קבע את מהירות הפעולה של הקוביה בשניות</div>
+                        <div class="input-group">
+                              <input type="button" value="-" class="button-minus" data-field="speed">
+                              <input type="number" step="1" max="" value="1" name="speed" id="speed"
+                                    class="speed-field">
+                              <input type="button" value="+" class="button-plus" data-field="speed">
+                        </div>
+
+                  </div>
+                  <div class="form-item">
+                        <div>קבע את גודל הסיבוב במעלות  על הציר האופקי של הקוביה </div>
+                        <div class="input-group">
+                              <input type="button" value="-" class="button-minus" data-field="rx">
+                              <input type="number" step="1" max="" value="1" name="rx" id="rx" class="rx-field">
+                             <input type="button" value="+" class="button-plus" data-field="rx">
+                        </div>
+
+                  </div>
+                  <div class="form-item">
+                        <div>קבע את גודל הסיבוב במעלות  על הציר האנכי של הקוביה </div>
+                        <div class="input-group">
+                              <input type="button" value="-" class="button-minus" data-field="ry">
+                              <input type="number" step="1" max="" value="1" name="ry" id="ry" class="ry-field">
+                              <input type="button" value="+" class="button-plus" data-field="ry">
+                        </div>
+
+                  </div>
+                  <div class="form-item">
+                        <div>קבע את גודל הסיבוב במעלות  על הציר האלכסוני של הקוביה </div>
+                        <div class="input-group">
+                              <input type="button" value="-" class="button-minus" data-field="rz">
+                              <input type="number" step="1" max="" value="1" name="rz" id="rz" class="rz-field">
+                              <input type="button" value="+" class="button-plus" data-field="rz">
+                        </div>
+
+                  </div>
+
+            </form>
+            <button class="createBtn">צור שורטקוד</button>
+            <div class="shortcode"></div>
+            <button class="copyBtn">העתק שורטקוד</button>
+      </div>
+
+      <script src="jquery.js"></script>
+      <script src="script.js"></script>
+</body>
+
+</html>

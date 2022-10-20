@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  direction: rtl;
+  background: linear-gradient(#0000ff, #6767c4);
+}
+
+.headline {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  color: white;
+}
+.headline h1 {
+  margin-left: 35px;
+}
+
+.all-site {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.explanation {
+  color: white;
+  line-height: 25px;
+  margin: 50px 0;
+}
+.explanation h1 {
+  margin: inherit;
+}
+.explanation ol {
+  list-style-position: inside;
+}
+.explanation a {
+  color: white;
+}
+
+.cube {
+  width: var(--size);
+  height: var(--size);
+  transform-style: preserve-3d;
+  animation: rotate 20s infinite linear;
+}
+@keyframes rotate {
+  to {
+    transform: rotateX(250deg) rotateY(360deg);
+  }
+}
+.cube.cubeMain {
+  position: absolute;
+  left: 50px;
+}
+.cube.cubeMain .bottom {
+  transform: rotateX(90deg) translateZ(calc(var(--size) / 2 * -1));
+  background-image: url("./logos/efrat.jpg");
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.cube.cubeMain .top {
+  transform: rotateX(90deg) translateZ(calc(var(--size) / 2));
+  background-image: url("./logos/groovesegol.png");
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.cube.cubeMain .left {
+  transform: translateZ(calc(var(--size) / 2)) translateY(-2px);
+  background-image: url("./logos/kolyacov.jpg");
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.cube.cubeMain .right {
+  transform: translateZ(calc(var(--size) / 2 * -1)) translateY(2px);
+  background-image: url("./logos/lamashcanta.jpg");
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.cube.cubeMain .front {
+  transform: rotateY(90deg) translateZ(calc(var(--size) / 2 * -1));
+  background-image: url("./logos/ohadkor.jpg");
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.cube.cubeMain .back {
+  transform: rotateY(90deg) translateZ(calc(var(--size) / 2));
+  background-image: url("./logos/thelosttreasures.png");
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.cube > div {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  border: 3px solid white;
+}
+
+.bottom {
+  transform: rotateX(90deg) translateZ(calc(var(--size) / 2 * -1));
+  background-color: blue;
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(calc(var(--size) / 2));
+  background-color: #7c84c9;
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.left {
+  transform: translateZ(calc(var(--size) / 2)) translateY(-2px);
+  background-color: #44c0c0;
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.right {
+  transform: translateZ(calc(var(--size) / 2 * -1)) translateY(2px);
+  background-color: rgba(61, 150, 150, 0.2588235294);
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.front {
+  transform: rotateY(90deg) translateZ(calc(var(--size) / 2 * -1));
+  background-color: #557c7c;
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.back {
+  transform: rotateY(90deg) translateZ(calc(var(--size) / 2));
+  background-color: #3c7979;
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-item {
+  display: flex;
+  margin-bottom: 25px;
+  color: white;
+}
+
+.form-item div {
+  width: 360px;
+  height: 30px;
+  text-align: center;
+  position: relative;
+  top: 5px;
+}
+
+.form-item div:first-child:after {
+  content: ":";
+  margin-left: 5px;
+}
+
+.form-item input {
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 190px;
+}
+
+.input-group {
+  display: flex;
+  width: 190px !important;
+  justify-content: space-between;
+}
+.input-group input {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 50px;
+  text-align: center;
+}
+.input-group .button-plus,
+.input-group .button-minus {
+  width: 50px;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.createBtn {
+  font-size: 26px;
+  padding: 5px 50px;
+  text-align: center;
+  background-color: skyblue;
+  color: white;
+  border: 0;
+}
+
+.shortcode {
+  color: white;
+  direction: ltr;
+}
+
+.copyBtn {
+  color: white;
+  text-align: center;
+  border: 0;
+  padding: 0 50px;
+  font-size: 26px;
+  background-color: blue;
+  margin: 0 auto;
+  display: none;
+}/*# sourceMappingURL=style.css.map */
