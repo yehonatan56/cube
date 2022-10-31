@@ -10,6 +10,30 @@ body {
   background: linear-gradient(#0000ff, #6767c4);
 }
 
+.bottom {
+  transform: rotateX(90deg) translateZ(calc(var(--size) / 2 * -1)) rotateY(180deg);
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(calc(var(--size) / 2));
+}
+
+.left {
+  transform: translateZ(calc(var(--size) / 2)) translateY(-2px);
+}
+
+.right {
+  transform: translateZ(calc(var(--size) / 2 * -1)) translateY(2px) rotateY(180deg);
+}
+
+.front {
+  transform: rotateY(90deg) translateZ(calc(var(--size) / 2 * -1)) rotateY(180deg);
+}
+
+.back {
+  transform: rotateY(90deg) translateZ(calc(var(--size) / 2));
+}
+
 .headline {
   display: flex;
   margin-top: 20px;
@@ -39,17 +63,19 @@ body {
 }
 .explanation a {
   color: white;
+  font-size: 25px;
 }
 
 .cube {
   width: var(--size);
   height: var(--size);
+  backface-visibility: hidden;
   transform-style: preserve-3d;
   animation: rotate 20s infinite linear;
 }
 @keyframes rotate {
   to {
-    transform: rotateX(250deg) rotateY(360deg);
+    transform: rotateX(360deg) rotateY(250deg);
   }
 }
 .cube.cubeMain {
@@ -57,100 +83,55 @@ body {
   left: 50px;
 }
 .cube.cubeMain .bottom {
-  transform: rotateX(90deg) translateZ(calc(var(--size) / 2 * -1));
   background-image: url("./logos/efrat.jpg");
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 .cube.cubeMain .top {
-  transform: rotateX(90deg) translateZ(calc(var(--size) / 2));
   background-image: url("./logos/groovesegol.png");
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 .cube.cubeMain .left {
-  transform: translateZ(calc(var(--size) / 2)) translateY(-2px);
   background-image: url("./logos/kolyacov.jpg");
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 .cube.cubeMain .right {
-  transform: translateZ(calc(var(--size) / 2 * -1)) translateY(2px);
   background-image: url("./logos/lamashcanta.jpg");
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 .cube.cubeMain .front {
-  transform: rotateY(90deg) translateZ(calc(var(--size) / 2 * -1));
   background-image: url("./logos/ohadkor.jpg");
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 .cube.cubeMain .back {
-  transform: rotateY(90deg) translateZ(calc(var(--size) / 2));
   background-image: url("./logos/thelosttreasures.png");
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 .cube > div {
   position: absolute;
   width: var(--size);
   height: var(--size);
   border: 3px solid white;
+  background-size: var(--size);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .bottom {
-  transform: rotateX(90deg) translateZ(calc(var(--size) / 2 * -1));
   background-color: blue;
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .top {
-  transform: rotateX(90deg) translateZ(calc(var(--size) / 2));
   background-color: #7c84c9;
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .left {
-  transform: translateZ(calc(var(--size) / 2)) translateY(-2px);
   background-color: #44c0c0;
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .right {
-  transform: translateZ(calc(var(--size) / 2 * -1)) translateY(2px);
   background-color: rgba(61, 150, 150, 0.2588235294);
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .front {
-  transform: rotateY(90deg) translateZ(calc(var(--size) / 2 * -1));
   background-color: #557c7c;
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .back {
-  transform: rotateY(90deg) translateZ(calc(var(--size) / 2));
   background-color: #3c7979;
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .form-item {
