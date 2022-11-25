@@ -81,6 +81,7 @@ body {
 .cube.cubeMain {
   position: absolute;
   left: 50px;
+  top: 150px;
 }
 .cube.cubeMain .bottom {
   background-image: url("./logos/efrat.jpg");
@@ -133,7 +134,13 @@ body {
 .back {
   background-color: #3c7979;
 }
-
+.image-options button{
+  background-color: blue;
+  color: white;
+  box-shadow: 0px 11px 15px 5px #000000;
+  padding: 20px;
+  
+}
 .form-item {
   display: flex;
   margin-bottom: 25px;
