@@ -7,24 +7,25 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>cube to website</title>
       <link rel="stylesheet" href="style.css">
+      <link rel="icon" href="title.gif">
+      <script src="https://kit.fontawesome.com/810f4daa2c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
       <div class="all-site">
-         <span class="headline">
-            <h1>הקוביה המסתובבת</h1>
-            <div class="cube"  style="--size: 70px">
-                  <div class="top"></div>
-                  <div class="right"></div>
-                  <div class="left"></div>
-                  <div class="bottom"></div>
-                  <div class="front"></div>
-                  <div class="back"></div>
-            </div>
-         </span>
-            
+            <span class="headline">
+                  <h1>הקוביה המסתובבת</h1>
+                  <div class="cube" style="--size: 70px">
+                        <div class="top"></div>
+                        <div class="right"></div>
+                        <div class="left"></div>
+                        <div class="bottom"></div>
+                        <div class="front"></div>
+                        <div class="back"></div>
+                  </div>
+            </span>
+
             <div class="explanation">
-                  <h2>קובית הקסם לפרסום באתרים</h2>
                   <p>האתר נראה פשוט ולא מושך?</p>
                   <p>מחפש משהו שיעשה את האתר שאתה בונה מעניין?</p>
                   <p>מעוניין להגדיל את שטחיי הפרסום פי 6</p>
@@ -51,6 +52,7 @@
                         <li>העתק את השורטקוד</li>
                         <li>צור ווג'ט שורטקוד באתרך איפה שאתה רוצה את הקוביה</li>
                         <li>הדבק את השורטקוד</li>
+
                   </ol>
             </div>
             <div class="cube cubeMain" style="--size: 200px">
@@ -66,27 +68,33 @@
                   <button class="writeBtn">הזן כתובות URL של תמונות לקוביה </button>
             </div>
             <form>
-                  
+
                   <div class="form-item">
-                        <div>הכנס כתובת תמונה בחלק העליון של הקוביה</div> <input type="text" class="urls"  id="topUrl">
-                  </div>
+                        <div>הכנס כתובת תמונה בחלק העליון של הקוביה</div> <input type="text" class="urls" id="topUrl" style="pointer-events: all; user-select: all;">
+                        <div id="statusTopUrl">❌</div>  
+                                 </div>
                   <div class="form-item">
-                        <div>הכנס כתובת תמונה בחלק התחתון של הקוביה</div> <input type="text" class="urls" 
+                        <div>הכנס כתובת תמונה בחלק התחתון של הקוביה</div> <input type="text" class="urls"
                               id="bottomUrl">
+                              <div id="statusBottomUrl">❌</div>  
                   </div>
                   <div class="form-item">
-                        <div>הכנס כתובת תמונה בחלק הימיני של הקוביה</div> <input type="text" class="urls"  id="rightUrl">
+                        <div>הכנס כתובת תמונה בחלק הימיני של הקוביה</div> <input type="text" class="urls" id="rightUrl">
+                        <div id="statusRightUrl">❌</div>  
                   </div>
 
 
                   <div class="form-item">
-                        <div>הכנס כתובת תמונה בחלק השמאלי של הקוביה</div> <input type="text" class="urls"  id="leftUrl">
+                        <div>הכנס כתובת תמונה בחלק השמאלי של הקוביה</div> <input type="text" class="urls" id="leftUrl">
+                        <div id="statusLeftUrl">❌</div>  
                   </div>
                   <div class="form-item">
-                        <div>הכנס כתובת תמונה בחלק האחורי של הקוביה</div> <input type="text" class="urls"  id="backUrl">
+                        <div>הכנס כתובת תמונה בחלק האחורי של הקוביה</div> <input type="text" class="urls" id="backUrl">
+                        <div id="statusFrontUrl">❌</div>  
                   </div>
                   <div class="form-item">
-                        <div>הכנס כתובת תמונה בחלק הקידמי של הקוביה</div> <input type="text" class="urls"  id="frontUrl">
+                        <div>הכנס כתובת תמונה בחלק הקידמי של הקוביה</div> <input type="text" class="urls" id="frontUrl">
+                        <div id="statusBackUrl">❌</div>  
                   </div>
 
                   <div class="form-item">
@@ -123,16 +131,16 @@
 
                   </div>
                   <div class="form-item">
-                        <div>קבע את גודל הסיבוב במעלות  על הציר האופקי של הקוביה </div>
+                        <div>קבע את גודל הסיבוב במעלות על הציר האופקי של הקוביה </div>
                         <div class="input-group">
                               <input type="button" value="-" class="button-minus" data-field="rx">
                               <input type="number" step="1" max="" value="1" name="rx" id="rx" class="rx-field">
-                             <input type="button" value="+" class="button-plus" data-field="rx">
+                              <input type="button" value="+" class="button-plus" data-field="rx">
                         </div>
 
                   </div>
                   <div class="form-item">
-                        <div>קבע את גודל הסיבוב במעלות  על הציר האנכי של הקוביה </div>
+                        <div>קבע את גודל הסיבוב במעלות על הציר האנכי של הקוביה </div>
                         <div class="input-group">
                               <input type="button" value="-" class="button-minus" data-field="ry">
                               <input type="number" step="1" max="" value="1" name="ry" id="ry" class="ry-field">
@@ -141,7 +149,7 @@
 
                   </div>
                   <div class="form-item">
-                        <div>קבע את גודל הסיבוב במעלות  על הציר האלכסוני של הקוביה </div>
+                        <div>קבע את גודל הסיבוב במעלות על הציר האלכסוני של הקוביה </div>
                         <div class="input-group">
                               <input type="button" value="-" class="button-minus" data-field="rz">
                               <input type="number" step="1" max="" value="1" name="rz" id="rz" class="rz-field">
@@ -149,11 +157,24 @@
                         </div>
 
                   </div>
+                  <div class="warning">
+                        <h1>האם ברצונך להשים תמונה זאת שוב?</h1>
+                        <p>
+                              אם כן התמונה תשכפל את עצמה
+                        </p>
 
+                        <div class="options-warning">
+                              <button id="warning-yes">כן , שכפל</button>
+                              <button id="warning-no">לא , השתמש במקורית</button>
+                        </div>
+                  </div>
             </form>
-            <button class="createBtn">צור שורטקוד</button>
-            <div class="shortcode"></div>
+            <button class="createShortCodeBtn">צור שורטקוד</button>
+            <button class="createCodeBtn">צור קוד</button>
+            <div class="result"></div>
             <button class="copyBtn">העתק שורטקוד</button>
+
+
       </div>
 
       <script src="jquery.js"></script>
