@@ -164,10 +164,11 @@ body {
   border-radius: 5px;
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
   width: 190px;
+}
+.urls{
   pointer-events: none;
   user-select: none;
 }
-
 .input-group {
   display: flex;
   width: 190px !important;
