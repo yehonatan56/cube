@@ -16,7 +16,7 @@ function resetinput() {
     document.getElementById(statusId).style.color = 'red';
   }
 }
-
+let statusFiles = [];
 let warning = document.querySelector(".warning");
 let uploadObject;
 let paramsObjects = {
@@ -34,6 +34,7 @@ for (let item of slides) {
   item.addEventListener('change', function () {
     switch (item.type) {
       case 'file':
+
         for (const fileObject of urls) {
           if (item.files[0].name == fileObject.fileName) {
             warning.style.visibility = "visible";
@@ -79,20 +80,43 @@ function uploadImageF(item) {
     console.log(response);
     var jx = JSON.parse(response);
     console.log(jx.data.url);
+    checkIfTheImageInputNew(item , jx);
 
-    uploadObject = {
-      id: item.id,
-      url: jx.data.url,
-      fileName: jx.data.image.filename,
-    }
-    urls.push(uploadObject);
+    
   });
-
   console.log(item.id);
   enableNextInput(slides, item);
 
 }
 
+function checkIfTheImageInputNew(item , jx) {
+  for (let index = 0; index <  7; index++) {
+    if (statusFiles[index] === item.id) {
+      urls.splice(index,1);
+      urls[index] = {
+        id: item.id,
+        url: jx.data.url,
+        fileName: jx.data.image.filename,
+      };
+      console.log(urls);
+      return;
+    } else {
+      pushNewImageToEmptyInput(item , jx);
+      return;
+    }
+    
+  }
+}
+
+function pushNewImageToEmptyInput(item , jx) {
+  uploadObject = {
+    id: item.id,
+    url: jx.data.url,
+    fileName: jx.data.image.filename,
+  }
+  urls.push(uploadObject);
+  statusFiles.push(item.id);
+}
 
 function enableNextInput(slides, item) {
   let statusId = 'status' + item.id.charAt(0).toUpperCase() + item.id.slice(1);
@@ -160,7 +184,21 @@ function create(button) {
 
     createShortCode: function () {
       let shortcode = `
-     [show-custom-animation width="${this.width}"  animation_speed="${this.speed}" cube_background_color="transparent" animation_rotatex=${this.rx} animation_rotatey=${this.ry} animation_rotatez=${this.rz}  cube_face_top_image_url="${this.topUrl}" cube_face_right_image_url="${this.rightUrl}" cube_face_bottom_image_url="${this.bottomUrl}" cube_face_left_image_url="${this.leftUrl}" cube_face_back_image_url="${this.backUrl}" cube_face_front_image_url="${this.frontUrl}" cube_border_size=${this.borderSize} cube_border_color="${this.borderColor}" ]
+     [show-custom-animation width="${this.width}" 
+      animation_speed="${this.speed}"
+       cube_background_color="transparent"
+        animation_rotatex=${this.rx}
+         animation_rotatey=${this.ry}
+          animation_rotatez=${this.rz}
+          cube_face_top_image_url="${this.topUrl}"
+           cube_face_right_image_url="${this.rightUrl}"
+           cube_face_bottom_image_url="${this.bottomUrl}"
+           
+           cube_face_left_image_url="${this.leftUrl}"
+            cube_face_back_image_url="${this.backUrl}"
+             cube_face_front_image_url="${this.frontUrl}"
+             cube_border_size=${this.borderSize}
+              cube_border_color="${this.borderColor}" ]
       `;
       document.querySelector(".result").innerHTML = shortcode;
 
@@ -231,7 +269,7 @@ function create(button) {
 
   if ($(".urls").attr("type") == "file") {
     try {
-      for (let index = 0; index < 6; index++) {
+      for (let index = 0; index < 7; index++) {
         let id = urls[index].id;
         let url = urls[index].url;
         params[id] = url;
