@@ -168,6 +168,7 @@ document.querySelector(".createShortCodeBtn").addEventListener('click', create);
 document.querySelector(".createCodeBtn").addEventListener('click', create);
 function create(button) {
   let params = {
+    name: document.getElementById("name").value,
     topUrl: document.getElementById("topUrl").value,
     bottomUrl: document.getElementById("bottomUrl").value,
     rightUrl: document.getElementById("rightUrl").value,
@@ -186,6 +187,7 @@ function create(button) {
       let shortcode = `
      [show-custom-animation width="${this.width}" 
       animation_speed="${this.speed}"
+      name="${this.name}"
        cube_background_color="transparent"
         animation_rotatex=${this.rx}
          animation_rotatey=${this.ry}
@@ -209,7 +211,7 @@ function create(button) {
 
     createCode: function () {
       let code = `
-      <div class="cube"  >
+      <div class="${this.name}"  >
       <div class="top"></div>
       <div class="right"></div>
       <div class="left"></div>
@@ -242,28 +244,106 @@ function create(button) {
   background-repeat: no-repeat;
 }
 
-.bottom {
+.${this.name} .bottom {
   background-image: url("${this.bottomUrl}");
+  transform: rotateX(90deg) translateZ(${this.width /2*-1}px) rotateY(180deg);
+
 }
-.right {
+.${this.name} .right {
   background-image: url("${this.rightUrl}");
+  transform: translateZ(${this.width /2 *-1}px) translateY(2px) rotateY(180deg);
 }
-.front {
+.${this.name} .front {
   background-image: url("${this.frontUrl}");
+  transform: rotateY(90deg) translateZ(${this.width /2 *-1}px)  rotateY(180deg);
+
 }
-.back {
+.${this.name} .back {
   background-image: url("${this.backUrl}");
+  transform: rotateY(90deg) translateZ(${this.width /2 }px)  ;
+
 }
-.left {
+.${this.name} .left {
   background-image: url("${this.leftUrl}");
+  transform: translateZ(${this.width /2 *-1}px) translateY(-2px);
 }
-.top {
+.${this.name} .top {
   background-image: url("${this.topUrl}");
+  transform: rotateX(90deg) translateZ(${this.width /2}px) ;
+
 }
 
 </style>
       `;
       document.querySelector(".result").textContent = code;
+    },
+    createVisual: function () {
+      let code = `
+      <div class="cube1"  >
+      <div class="top1"></div>
+      <div class="right1"></div>
+      <div class="left1"></div>
+      <div class="bottom1"></div>
+      <div class="front1"></div>
+      <div class="back1"></div>
+</div>
+
+<style>
+.cube1 {
+  width: ${this.width}px;
+  height: ${this.width}px;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  animation: rotate ${this.speed}s infinite linear;
+}
+@keyframes rotate {
+  to {
+    transform: rotateX(${this.rx}deg) rotateY(${this.ry}deg) rotateZ(${this.rz}deg);
+  }
+}
+
+.cube1 > div {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border: ${this.borderSize}px solid ${this.borderColor};
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bottom1 {
+  background-image: url("${this.bottomUrl}");
+  transform: rotateX(90deg) translateZ(${this.width /2*-1}px) rotateY(180deg);
+
+}
+.right1 {
+  background-image: url("${this.rightUrl}");
+  transform: translateZ(${this.width /2 *-1}px) translateY(2px) rotateY(180deg);
+}
+.front1 {
+  background-image: url("${this.frontUrl}");
+  transform: rotateY(90deg) translateZ(${this.width /2 *-1}px)  rotateY(180deg);
+
+}
+.back1 {
+  background-image: url("${this.backUrl}");
+  transform: rotateY(90deg) translateZ(${this.width /2 }px)  ;
+
+}
+.left1 {
+  background-image: url("${this.leftUrl}");
+  transform: translateZ(${this.width /2 *-1}px) translateY(-2px);
+}
+.top1 {
+  background-image: url("${this.topUrl}");
+  transform: rotateX(90deg) translateZ(${this.width /2}px) ;
+
+}
+
+</style>
+      `;
+      document.querySelector(".visual").innerHTML = code;
     }
   }
 
@@ -280,6 +360,7 @@ function create(button) {
     }
   }
 
+  params.createVisual();
   if (button.target.className == "createShortCodeBtn") {
     params.createShortCode();
   } else {

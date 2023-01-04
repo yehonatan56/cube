@@ -197,6 +197,15 @@ body {
   border: 0;
 }
 
+.visual{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 50px;
+  bottom: -700px;
+  /*background-color: antiquewhite;*/
+}
+
 .result {
   color: white;
   direction: ltr;
